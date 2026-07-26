@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Quote } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Hero } from "@/components/hero";
 import { SectionTitle } from "@/components/section-title";
 import { ServiceCard } from "@/components/service-card";
@@ -16,7 +16,6 @@ import {
   industries,
   researchHighlights,
   portfolioProjects,
-  testimonials,
 } from "@/lib/data";
 
 export default function HomePage() {
@@ -145,41 +144,6 @@ export default function HomePage() {
               </Link>
             </Button>
           </ScrollReveal>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 md:py-28" aria-labelledby="testimonials-heading">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <ScrollReveal>
-            <SectionTitle
-              subtitle="Testimonials"
-              title="What Our Clients Say"
-              description="Trusted by industry leaders, academic institutions, and innovative startups."
-            />
-          </ScrollReveal>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, i) => (
-              <ScrollReveal key={testimonial.name} delay={i * 0.1}>
-                <blockquote className="relative rounded-xl border border-border bg-card p-6 h-full flex flex-col">
-                  <Quote className="h-8 w-8 text-gold/30 mb-4" aria-hidden="true" />
-                  <p className="text-sm text-muted leading-relaxed flex-1 italic">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </p>
-                  <footer className="mt-6 pt-4 border-t border-border">
-                    <cite className="not-italic">
-                      <div className="font-heading text-sm font-semibold">
-                        {testimonial.name}
-                      </div>
-                      <div className="text-xs text-muted">
-                        {testimonial.role}, {testimonial.company}
-                      </div>
-                    </cite>
-                  </footer>
-                </blockquote>
-              </ScrollReveal>
-            ))}
-          </div>
         </div>
       </section>
 

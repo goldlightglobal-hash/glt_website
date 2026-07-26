@@ -6,7 +6,6 @@ import type {
   Industry,
   ResearchArea,
   PortfolioProject,
-  Testimonial,
   BlogPost,
   JobOpening,
   TrainingProgram,
@@ -234,30 +233,6 @@ export const portfolioProjects: PortfolioProject[] = [
       "8-layer high-speed PCB design for 5G baseband processor with SI/PI validation.",
     technology: "Altium · RF Design · SI/PI",
     image: "/images/portfolio-6.svg",
-  },
-];
-
-export const testimonials: Testimonial[] = [
-  {
-    name: "Dr. Rajesh Kumar",
-    role: "Director of R&D",
-    company: "MedTech Innovations",
-    quote:
-      "GoldLighT delivered an exceptional medical imaging pipeline that exceeded our performance targets. Their deep expertise in both AI and hardware made them the ideal partner.",
-  },
-  {
-    name: "Sarah Chen",
-    role: "VP Engineering",
-    company: "AutoVision Systems",
-    quote:
-      "The FPGA accelerator they built for our ADAS platform reduced latency by 8x. Professional, responsive, and technically outstanding throughout the project.",
-  },
-  {
-    name: "Prof. Anand Mehta",
-    role: "Dean, ECE Department",
-    company: "National Institute of Technology",
-    quote:
-      "Their VLSI training program transformed our students' industry readiness. The hands-on labs and real-world projects are exactly what academia needs.",
   },
 ];
 

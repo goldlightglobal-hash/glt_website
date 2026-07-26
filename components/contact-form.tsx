@@ -8,16 +8,54 @@ import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 
 export function ContactForm() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+    setError(null);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ name, email, phone, message }),
+      });
+
+      if (!response.ok) {
+        const contentType = response.headers.get("content-type") || "";
+        let errorMessage = "Unable to send message.";
+
+        if (contentType.includes("application/json")) {
+          const errorData = await response.json();
+          errorMessage = errorData.error || errorMessage;
+        } else {
+          const responseText = await response.text();
+          errorMessage = responseText || errorMessage;
+        }
+
+        throw new Error(errorMessage);
+      }
+
       setSubmitted(true);
-    }, 1000);
+      setName("");
+      setEmail("");
+      setPhone("");
+      setMessage("");
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Something went wrong");
+    } finally {
+      setLoading(false);
+    }
   };
 
   if (submitted) {
@@ -59,6 +97,8 @@ export function ContactForm() {
             name="name"
             type="text"
             placeholder="John Doe"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
             required
             autoComplete="name"
             aria-required="true"
@@ -71,6 +111,8 @@ export function ContactForm() {
             name="email"
             type="email"
             placeholder="john@company.com"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
             required
             autoComplete="email"
             aria-required="true"
@@ -85,6 +127,8 @@ export function ContactForm() {
           name="phone"
           type="tel"
           placeholder="+91 98765 43210"
+          value={phone}
+          onChange={(event) => setPhone(event.target.value)}
           autoComplete="tel"
         />
       </div>
@@ -95,11 +139,15 @@ export function ContactForm() {
           id="message"
           name="message"
           placeholder="Tell us about your project or inquiry..."
+          value={message}
+          onChange={(event) => setMessage(event.target.value)}
           required
           aria-required="true"
           rows={5}
         />
       </div>
+
+      {error ? <p className="text-sm text-red-400">{error}</p> : null}
 
       <Button type="submit" variant="default" size="lg" disabled={loading} className="w-full sm:w-auto">
         {loading ? "Sending..." : "Send Message"}

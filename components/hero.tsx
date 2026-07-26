@@ -25,7 +25,7 @@ export function Hero() {
         </motion.div>
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 pt-32 pb-20 text-center">
+      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -64,7 +64,7 @@ export function Hero() {
         </motion.div>
 
         <motion.div
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto"
+          className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-3xl mx-auto justify-items-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
@@ -73,7 +73,6 @@ export function Hero() {
             { value: "15+", label: "Years Experience" },
             { value: "200+", label: "Projects Delivered" },
             { value: "50+", label: "Industry Partners" },
-            { value: "1000+", label: "Engineers Trained" },
           ].map((stat) => (
             <div key={stat.label} className="text-center">
               <div className="font-heading text-2xl sm:text-3xl font-bold text-gold">
