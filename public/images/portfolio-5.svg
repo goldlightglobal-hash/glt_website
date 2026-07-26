@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+  <rect width="800" height="450" fill="#0B1120"/>
+  <circle cx="400" cy="200" r="60" fill="#111827" stroke="#2563EB" stroke-width="2"/>
+  <circle cx="400" cy="200" r="30" fill="#2563EB" opacity="0.3"/>
+  <line x1="400" y1="260" x2="400" y2="320" stroke="#D4AF37" stroke-width="2"/>
+  <line x1="360" y1="320" x2="440" y2="320" stroke="#D4AF37" stroke-width="2"/>
+  <text x="400" y="400" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="16">TinyML Sensor Hub</text>
+</svg>

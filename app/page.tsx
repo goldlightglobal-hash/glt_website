@@ -1,65 +1,189 @@
-import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Quote } from "lucide-react";
+import { Hero } from "@/components/hero";
+import { SectionTitle } from "@/components/section-title";
+import { ServiceCard } from "@/components/service-card";
+import { FeatureCard } from "@/components/feature-card";
+import { IndustryCard } from "@/components/industry-card";
+import { ResearchCard } from "@/components/research-card";
+import { PortfolioCard } from "@/components/portfolio-card";
+import { CtaSection } from "@/components/cta-section";
+import { ScrollReveal } from "@/components/scroll-reveal";
+import { Button } from "@/components/ui/button";
+import {
+  services,
+  whyChooseUs,
+  industries,
+  researchHighlights,
+  portfolioProjects,
+  testimonials,
+} from "@/lib/data";
 
-export default function Home() {
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
+    <>
+      <Hero />
+
+      {/* Services */}
+      <section className="py-20 md:py-28 bg-secondary/30" aria-labelledby="services-heading">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <SectionTitle
+              subtitle="What We Do"
+              title="Our Services"
+              description="Comprehensive engineering services spanning the full spectrum from AI algorithms to silicon implementation."
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </ScrollReveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+            {services.map((service, i) => (
+              <ScrollReveal key={service.title} delay={i * 0.05}>
+                <ServiceCard {...service} />
+              </ScrollReveal>
+            ))}
+          </div>
+          <ScrollReveal className="text-center mt-10">
+            <Button asChild variant="outline">
+              <Link href="/services/">
+                View All Services
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </ScrollReveal>
         </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Why Choose Us */}
+      <section className="py-20 md:py-28" aria-labelledby="why-heading">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <SectionTitle
+              subtitle="Why GoldLighT"
+              title="Why Choose Us"
+              description="A trusted engineering partner with deep expertise across AI, semiconductor, and embedded domains."
+            />
+          </ScrollReveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whyChooseUs.map((feature, i) => (
+              <ScrollReveal key={feature.title} delay={i * 0.08}>
+                <FeatureCard {...feature} />
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Industries */}
+      <section className="py-20 md:py-28 bg-secondary/30" aria-labelledby="industries-heading">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <SectionTitle
+              subtitle="Industries"
+              title="Industries We Serve"
+              description="Delivering tailored engineering solutions across diverse industry verticals."
+            />
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {industries.map((industry, i) => (
+              <ScrollReveal key={industry.title} delay={i * 0.06}>
+                <IndustryCard {...industry} />
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Research */}
+      <section className="py-20 md:py-28" aria-labelledby="research-heading">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <SectionTitle
+              subtitle="Research"
+              title="Research Highlights"
+              description="Pioneering research in AI hardware acceleration, medical imaging, and edge computing."
+            />
+          </ScrollReveal>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+            {researchHighlights.map((area, i) => (
+              <ScrollReveal key={area.title} delay={i * 0.05}>
+                <ResearchCard {...area} />
+              </ScrollReveal>
+            ))}
+          </div>
+          <ScrollReveal className="text-center mt-10">
+            <Button asChild variant="secondary">
+              <Link href="/research/">
+                Explore Research
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Portfolio */}
+      <section className="py-20 md:py-28 bg-secondary/30" aria-labelledby="portfolio-heading">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <SectionTitle
+              subtitle="Portfolio"
+              title="Featured Projects"
+              description="A showcase of our engineering achievements across AI, FPGA, ASIC, and embedded domains."
+            />
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {portfolioProjects.slice(0, 6).map((project, i) => (
+              <ScrollReveal key={project.title} delay={i * 0.08}>
+                <PortfolioCard {...project} />
+              </ScrollReveal>
+            ))}
+          </div>
+          <ScrollReveal className="text-center mt-10">
+            <Button asChild variant="outline">
+              <Link href="/portfolio/">
+                View Full Portfolio
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          </ScrollReveal>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 md:py-28" aria-labelledby="testimonials-heading">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <ScrollReveal>
+            <SectionTitle
+              subtitle="Testimonials"
+              title="What Our Clients Say"
+              description="Trusted by industry leaders, academic institutions, and innovative startups."
+            />
+          </ScrollReveal>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {testimonials.map((testimonial, i) => (
+              <ScrollReveal key={testimonial.name} delay={i * 0.1}>
+                <blockquote className="relative rounded-xl border border-border bg-card p-6 h-full flex flex-col">
+                  <Quote className="h-8 w-8 text-gold/30 mb-4" aria-hidden="true" />
+                  <p className="text-sm text-muted leading-relaxed flex-1 italic">
+                    &ldquo;{testimonial.quote}&rdquo;
+                  </p>
+                  <footer className="mt-6 pt-4 border-t border-border">
+                    <cite className="not-italic">
+                      <div className="font-heading text-sm font-semibold">
+                        {testimonial.name}
+                      </div>
+                      <div className="text-xs text-muted">
+                        {testimonial.role}, {testimonial.company}
+                      </div>
+                    </cite>
+                  </footer>
+                </blockquote>
+              </ScrollReveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CtaSection />
+    </>
   );
 }
