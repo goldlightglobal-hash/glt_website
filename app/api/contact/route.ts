@@ -5,14 +5,22 @@ const SMTP_HOST = process.env.SMTP_HOST;
 const SMTP_PORT = Number(process.env.SMTP_PORT || "587");
 const SMTP_USER = process.env.SMTP_USER;
 const SMTP_PASS = process.env.SMTP_PASS;
+const EMAIL_FROM = process.env.EMAIL_FROM || SMTP_USER || EMAIL_TO;
 
-if (!SMTP_HOST || !SMTP_USER || !SMTP_PASS) {
+const missingSmtpConfig = !SMTP_HOST || !SMTP_USER || !SMTP_PASS || !EMAIL_FROM;
+if (missingSmtpConfig) {
   console.warn(
-    "SMTP configuration is missing. Set SMTP_HOST, SMTP_PORT, SMTP_USER, and SMTP_PASS in environment variables."
+    "SMTP configuration is missing. Set SMTP_HOST, SMTP_PORT, SMTP_USER, SMTP_PASS, and optionally EMAIL_FROM in environment variables."
   );
 }
 
 export async function POST(request: NextRequest) {
+  if (missingSmtpConfig) {
+    return NextResponse.json(
+      { error: "Email is not configured on the server. Please check SMTP environment variables." },
+      { status: 500 }
+    );
+  }
   try {
     let body;
 
@@ -68,10 +76,12 @@ export async function POST(request: NextRequest) {
 
     try {
       await transporter.sendMail({
-        from: `${name} <${email}>`,
+        from: EMAIL_FROM,
+        replyTo: `${name} <${email}>`,
         to: EMAIL_TO,
         subject: "New website enquiry from GoldLighT Technologies",
         text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "Not provided"}\n\nMessage:\n${message}`,
+        html: `<p><strong>Name:</strong> ${name}</p><p><strong>Email:</strong> ${email}</p><p><strong>Phone:</strong> ${phone || "Not provided"}</p><p><strong>Message:</strong></p><p>${message.replace(/\n/g, "<br />")}</p>`,
       });
     } catch (sendErr) {
       console.error("Failed to send email:", sendErr);
