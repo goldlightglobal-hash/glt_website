@@ -598,9 +598,9 @@ export const companyInfo = {
   whatsappLink: "https://wa.me/917406058163",
   address: "No 40/3, 1st Floor, JC Industrial Estate, Yelachenahalli, Bengaluru, Karnataka 560062",
   social: {
-    linkedin: "https://linkedin.com/company/goldlight-technologies",
-    twitter: "https://twitter.com/goldlighttech",
-    github: "https://github.com/goldlight-technologies",
-    youtube: "https://youtube.com/@goldlighttechnologies",
+    linkedin: "https://in.linkedin.com/company/goldlight-technologies-pvt-ltd",
+    instagram: "https://www.instagram.com/goldlight_technologies_pvt_ltd/",
+    youtube: "https://www.youtube.com/channel/UC98_AfZ7QnLosKlTiyFXkgg",
+    facebook: "https://www.facebook.com/GoldlightTechnologies/",
   },
 };

@@ -1,5 +1,4 @@
 import { NextRequest, NextResponse } from "next/server";
-import nodemailer from "nodemailer";
 
 const EMAIL_TO = process.env.CONTACT_EMAIL || "info@goldlight.co.in";
 const SMTP_HOST = process.env.SMTP_HOST;
@@ -35,28 +34,58 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    const transporter = nodemailer.createTransport({
-      host: SMTP_HOST,
-      port: SMTP_PORT,
-      secure: SMTP_PORT === 465,
-      auth: {
-        user: SMTP_USER,
-        pass: SMTP_PASS,
-      },
-    });
+    let nodemailer;
+    try {
+      // dynamic import to avoid import-time failures in some deployment environments
+      // (Vercel or static builds can sometimes surface bundling/import issues)
+      nodemailer = await import("nodemailer");
+    } catch (impErr) {
+      console.error("Failed to import nodemailer:", impErr);
+      return NextResponse.json(
+        { error: "Server misconfiguration: email support unavailable." },
+        { status: 500 }
+      );
+    }
 
-    await transporter.sendMail({
-      from: `${name} <${email}>`,
-      to: EMAIL_TO,
-      subject: "New website enquiry from GoldLighT Technologies",
-      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "Not provided"}\n\nMessage:\n${message}`,
-    });
+    let transporter;
+    try {
+      transporter = nodemailer.createTransport({
+        host: SMTP_HOST,
+        port: SMTP_PORT,
+        secure: SMTP_PORT === 465,
+        auth: {
+          user: SMTP_USER,
+          pass: SMTP_PASS,
+        },
+      });
+    } catch (transErr) {
+      console.error("Failed to create transporter:", transErr);
+      return NextResponse.json(
+        { error: "Email transporter initialization failed." },
+        { status: 500 }
+      );
+    }
+
+    try {
+      await transporter.sendMail({
+        from: `${name} <${email}>`,
+        to: EMAIL_TO,
+        subject: "New website enquiry from GoldLighT Technologies",
+        text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "Not provided"}\n\nMessage:\n${message}`,
+      });
+    } catch (sendErr) {
+      console.error("Failed to send email:", sendErr);
+      return NextResponse.json(
+        { error: "Could not send email. Please try again later." },
+        { status: 500 }
+      );
+    }
 
     return NextResponse.json({ success: true });
   } catch (error) {
     console.error(error);
     return NextResponse.json(
-      { error: "Could not send email. Please try again later." },
+      { error: "Unknown server error." },
       { status: 500 }
     );
   }

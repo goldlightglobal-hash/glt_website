@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ExternalLink, GitBranch, PlayCircle, Link2, Mail, Phone, MapPin } from "lucide-react";
+import { ExternalLink, Camera, PlayCircle, Mail, Phone, MapPin } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { companyInfo, navLinks, services } from "@/lib/data";
 
@@ -19,9 +19,9 @@ export function Footer() {
             <div className="flex gap-3">
               {[
                 { icon: ExternalLink, href: companyInfo.social.linkedin, label: "LinkedIn" },
-                { icon: Link2, href: companyInfo.social.twitter, label: "Twitter" },
-                { icon: GitBranch, href: companyInfo.social.github, label: "GitHub" },
+                { icon: Camera, href: companyInfo.social.instagram, label: "Instagram" },
                 { icon: PlayCircle, href: companyInfo.social.youtube, label: "YouTube" },
+                { icon: ExternalLink, href: companyInfo.social.facebook, label: "Facebook" },
               ].map(({ icon: Icon, href, label }) => (
                 <a
                   key={label}
