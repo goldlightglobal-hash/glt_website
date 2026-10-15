@@ -53,6 +53,20 @@ export interface JobOpening {
   type: string;
 }
 
+export interface FeaturedInternshipProgram {
+  title: string;
+  department: string;
+  location: string;
+  type: string;
+  introduction: string[];
+  areasOfWork: string[];
+  studentGains: string[];
+  eligiblePrograms: string[];
+  preferredKnowledge: string;
+  internshipNature: string[];
+  idealCandidate: string;
+}
+
 export interface TrainingProgram {
   title: string;
   description: string;
