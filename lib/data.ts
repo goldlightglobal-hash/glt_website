@@ -473,13 +473,62 @@ export const jobOpenings: JobOpening[] = [
     location: "Bangalore, India",
     type: "Internship",
   },
-  {
-    title: "AI Research Intern",
-    department: "Research & Development",
-    location: "Remote",
-    type: "Internship",
-  },
 ];
+
+export const featuredInternshipProgram = {
+  title: "Open AI IC Design & ASIC R&D",
+  department: "Research & Development",
+  location: "Bangalore, India",
+  type: "Internship",
+  introduction: [
+    "GoldLighT Technologies Pvt. Ltd. is offering internship opportunities for engineering students interested in Open AI IC Design, ASIC Design and AI Hardware.",
+    "Selected students will work on the development of small AI-focused integrated circuits using open-source semiconductor design tools and technologies. The program provides hands-on exposure to the complete IC development journey, from AI/ML algorithm concepts to RTL implementation and ASIC realization.",
+  ],
+  areasOfWork: [
+    "AI/ML Hardware Architecture",
+    "AI Accelerator Design",
+    "CNN / Neural Network Hardware",
+    "MAC-based Processing Units",
+    "RTL Design using Verilog/SystemVerilog",
+    "Functional Verification",
+    "ASIC Synthesis",
+    "Static Timing Analysis",
+    "Physical Design",
+    "RTL-to-GDSII Flow",
+    "Open-Source EDA Tools",
+    "SKY130 Open-Source PDK",
+    "AI Hardware Optimization",
+  ],
+  studentGains: [
+    "Hands-on experience in AI IC / ASIC development",
+    "Practical understanding of AI algorithms and hardware acceleration",
+    "Experience converting computational models into hardware architectures",
+    "Exposure to open-source IC design methodologies",
+    "Experience with Verilog/SystemVerilog and ASIC design flows",
+    "Opportunity to contribute to an actual AI hardware development project",
+    "Technical mentorship from the GoldLighT R&D team",
+    "Experience working as part of a semiconductor R&D team",
+    "Internship/project completion certificate based on successful participation and deliverables",
+  ],
+  eligiblePrograms: [
+    "B.E./B.Tech – ECE",
+    "B.E./B.Tech – EEE",
+    "VLSI / Microelectronics",
+    "Electronics Engineering",
+    "Electrical & Electronics Engineering",
+    "Embedded Systems",
+    "Computer Engineering / related disciplines",
+  ],
+  preferredKnowledge:
+    "Digital Electronics, Verilog HDL, VLSI fundamentals, Computer Architecture, FPGA, Python or basic AI/ML concepts.",
+  internshipNature: [
+    "This is an unpaid, project-oriented R&D internship for students who are genuinely interested in AI hardware, IC design and semiconductor technology.",
+    "The primary benefit is practical experience, technical mentorship and participation in an AI IC development project.",
+    "Students will be expected to work consistently on assigned technical tasks and contribute to the overall project deliverables.",
+  ],
+  idealCandidate:
+    "We are looking for students who want to build the future of AI Hardware and Semiconductor Technology and are willing to learn, experiment and contribute to a real IC design project.",
+};
 
 export const blogPosts: BlogPost[] = [
   {
