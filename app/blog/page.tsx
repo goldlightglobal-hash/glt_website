@@ -27,7 +27,13 @@ export default function BlogPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {blogPosts.map((post, i) => (
               <ScrollReveal key={post.slug} delay={i * 0.06}>
-                <article className="group overflow-hidden rounded-xl border border-border bg-card transition-all duration-300 hover:border-gold/30 hover:shadow-xl hover:-translate-y-1 h-full flex flex-col">
+                <article
+                  className={`group flex h-full flex-col overflow-hidden rounded-xl border bg-card transition-all duration-300 hover:-translate-y-1 hover:border-gold/30 hover:shadow-xl ${
+                    i === 0
+                      ? "border-gold/50 shadow-lg shadow-gold/5"
+                      : "border-border"
+                  }`}
+                >
                   <div className="relative aspect-video overflow-hidden bg-secondary">
                     <Image
                       src={post.image}
@@ -37,6 +43,11 @@ export default function BlogPage() {
                       loading="lazy"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
+                    {i === 0 ? (
+                      <span className="absolute left-3 top-3 rounded-full border border-gold/50 bg-background/90 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-gold">
+                        Featured
+                      </span>
+                    ) : null}
                   </div>
                   <div className="p-5 flex flex-col flex-1">
                     <div className="flex items-center gap-3 mb-3">
@@ -55,7 +66,7 @@ export default function BlogPage() {
                       {post.excerpt}
                     </p>
                     <Link
-                      href={`/blog/#${post.slug}`}
+                      href={post.href ?? `/blog/#${post.slug}`}
                       className="inline-flex items-center gap-1.5 text-sm font-medium text-gold hover:gap-2.5 transition-all"
                       aria-label={`Read more about ${post.title}`}
                     >

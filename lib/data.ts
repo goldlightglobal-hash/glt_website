@@ -532,6 +532,16 @@ export const featuredInternshipProgram = {
 
 export const blogPosts: BlogPost[] = [
   {
+    title: "India Semiconductor Mission: Building a Complete Chip Ecosystem",
+    excerpt:
+      "A practical look at the mission's policy framework, the semiconductor value chain, and the engineering capabilities needed to turn investment into long-term capacity.",
+    category: "Semiconductors",
+    date: "October 18, 2026",
+    image: "/images/blog-india-semiconductor-mission.svg",
+    slug: "india-semiconductor-mission",
+    href: "/blog/india-semiconductor-mission/",
+  },
+  {
     title: "Building Efficient CNN Accelerators on FPGA",
     excerpt:
       "Explore design strategies for mapping convolutional neural networks to FPGA fabric with optimized memory hierarchies and parallelism.",

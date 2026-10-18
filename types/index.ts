@@ -44,6 +44,7 @@ export interface BlogPost {
   date: string;
   image: string;
   slug: string;
+  href?: string;
 }
 
 export interface JobOpening {
