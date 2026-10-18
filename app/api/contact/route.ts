@@ -58,14 +58,14 @@ export async function POST(request: NextRequest) {
     let transporter;
     try {
       transporter = nodemailer.createTransport({
-        host: SMTP_HOST,
-        port: SMTP_PORT,
-        secure: SMTP_PORT === 465,
-        auth: {
-          user: SMTP_USER,
-          pass: SMTP_PASS,
-        },
-      });
+  host: SMTP_HOST,
+  port: 465,
+  secure: true,
+  auth: {
+    user: SMTP_USER,
+    pass: SMTP_PASS,
+  },
+});
     } catch (transErr) {
       console.error("Failed to create transporter:", transErr);
       return NextResponse.json(
