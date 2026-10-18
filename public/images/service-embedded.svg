@@ -1,7 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
-  <rect width="800" height="450" fill="#0B1120"/>
-  <rect x="330" y="160" width="140" height="100" rx="4" fill="#111827" stroke="#2563EB" stroke-width="1.5"/>
-  <rect x="350" y="280" width="30" height="20" rx="2" fill="#D4AF37" opacity="0.5"/>
-  <rect x="420" y="280" width="30" height="20" rx="2" fill="#D4AF37" opacity="0.5"/>
-  <text x="400" y="350" text-anchor="middle" fill="#D4AF37" font-family="sans-serif" font-size="20" font-weight="bold">Embedded Systems</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#091423"/><stop offset="1" stop-color="#16263A"/></linearGradient>
+    <linearGradient id="board" x1="233" y1="110" x2="557" y2="338" gradientUnits="userSpaceOnUse"><stop stop-color="#1A694F"/><stop offset="1" stop-color="#124137"/></linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <g stroke="#5797A9" stroke-opacity=".65" stroke-width="2">
+    <path d="M253 170H156v-54h-47m96 54h-85v94h-34m173-48h-98v103H129"/>
+    <path d="M547 167h86v-61h57m-90 87h105v78h-36m-122-43h118v96h50"/>
+    <path d="M398 112V76h-54m55 250v34h76"/>
+  </g>
+  <g fill="#D4AE55"><circle cx="109" cy="116" r="5"/><circle cx="90" cy="264" r="5"/><circle cx="129" cy="379" r="5"/><circle cx="690" cy="106" r="5"/><circle cx="705" cy="271" r="5"/><circle cx="701" cy="372" r="5"/></g>
+  <rect x="224" y="91" width="352" height="263" rx="18" fill="#07111D" stroke="#D4AE55" stroke-width="2"/>
+  <rect x="241" y="108" width="318" height="229" rx="12" fill="url(#board)" stroke="#74B99B" stroke-opacity=".7"/>
+  <rect x="337" y="152" width="126" height="111" rx="12" fill="#11283A" stroke="#A0C9D8" stroke-width="2"/>
+  <text x="400" y="190" text-anchor="middle" fill="#D4AE55" font-family="Arial, sans-serif" font-size="12" letter-spacing="2">ARM</text>
+  <text x="400" y="215" text-anchor="middle" fill="#D4E0E7" font-family="Arial, sans-serif" font-size="18" font-weight="bold">CORTEX-M</text>
+  <path d="M366 233h68" stroke="#72CFC4" stroke-width="2"/>
+  <g fill="#D2AE5A" stroke="#F0CF83" stroke-width="1">
+    <rect x="270" y="141" width="42" height="34" rx="4"/><rect x="488" y="141" width="42" height="34" rx="4"/>
+    <rect x="270" y="274" width="42" height="34" rx="4"/><rect x="488" y="274" width="42" height="34" rx="4"/>
+  </g>
+  <g fill="#183148" font-family="Arial, sans-serif" font-size="9" text-anchor="middle"><text x="291" y="162">FLASH</text><text x="509" y="162">RADIO</text><text x="291" y="295">SENSOR</text><text x="509" y="295">POWER</text></g>
+  <path d="M312 158h25m126 0h25m-176 133h-25m176 0h25" stroke="#E9BE61" stroke-width="3"/>
+  <rect x="91" y="325" width="120" height="43" rx="9" fill="#0B1724" stroke="#405E78"/>
+  <text x="151" y="352" text-anchor="middle" fill="#B9CDDF" font-family="Arial, sans-serif" font-size="12" letter-spacing="1">RTOS / FIRMWARE</text>
+  <rect x="585" y="325" width="139" height="43" rx="9" fill="#0B1724" stroke="#405E78"/>
+  <text x="654" y="352" text-anchor="middle" fill="#B9CDDF" font-family="Arial, sans-serif" font-size="12" letter-spacing="1">CONNECTED DEVICE</text>
 </svg>

@@ -1,9 +1,47 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
-  <rect width="800" height="450" fill="#0B1120"/>
-  <rect x="250" y="120" width="300" height="200" rx="6" fill="#111827" stroke="#D4AF37" stroke-width="1.5"/>
-  <line x1="280" y1="160" x2="520" y2="160" stroke="#2563EB" stroke-width="1" opacity="0.5"/>
-  <line x1="280" y1="200" x2="520" y2="200" stroke="#2563EB" stroke-width="1" opacity="0.5"/>
-  <line x1="280" y1="240" x2="520" y2="240" stroke="#2563EB" stroke-width="1" opacity="0.5"/>
-  <line x1="280" y1="280" x2="520" y2="280" stroke="#2563EB" stroke-width="1" opacity="0.5"/>
-  <text x="400" y="400" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="16">ASIC Memory Controller</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#081323"/>
+      <stop offset="1" stop-color="#162339"/>
+    </linearGradient>
+    <linearGradient id="die" x1="279" y1="119" x2="520" y2="324" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#233B59"/>
+      <stop offset="1" stop-color="#101C2B"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <g stroke="#59738F" stroke-opacity=".2" stroke-width="1">
+    <path d="M58 93h684M58 357h684M90 68v304m620-304v304"/>
+  </g>
+  <rect x="267" y="104" width="266" height="232" rx="18" fill="#070E18" stroke="#D3AA53" stroke-width="2"/>
+  <rect x="284" y="121" width="232" height="198" rx="12" fill="url(#die)" stroke="#54779D" stroke-opacity=".7"/>
+  <g stroke="#6689B2" stroke-width="3" stroke-opacity=".7">
+    <path d="M300 94v27m26-27v27m26-27v27m26-27v27m26-27v27m26-27v27m26-27v27m26-27v27m26-27v27"/>
+    <path d="M300 319v27m26-27v27m26-27v27m26-27v27m26-27v27m26-27v27m26-27v27m26-27v27m26-27v27"/>
+    <path d="M257 137h27m-27 26h27m-27 26h27m-27 26h27m-27 26h27m-27 26h27m-27 26h27"/>
+    <path d="M516 137h27m-27 26h27m-27 26h27m-27 26h27m-27 26h27m-27 26h27m-27 26h27"/>
+  </g>
+  <rect x="340" y="169" width="136" height="102" rx="8" fill="#12243A" stroke="#8BB5DC"/>
+  <text x="408" y="190" text-anchor="middle" fill="#D5AF55" font-family="Arial, sans-serif" font-size="11" letter-spacing="2">MEMORY CONTROLLER</text>
+  <path d="M357 205h102v47H357z" fill="#0B1727" stroke="#456486"/>
+  <path d="M368 217h80m-80 10h80m-80 10h80m-80 10h80" stroke="#76A8D7" stroke-width="2"/>
+  <g fill="#D5AF55">
+    <rect x="115" y="136" width="115" height="72" rx="8" fill="#142940" stroke="#7797B7"/>
+    <rect x="115" y="243" width="115" height="72" rx="8" fill="#142940" stroke="#7797B7"/>
+    <rect x="570" y="136" width="115" height="72" rx="8" fill="#142940" stroke="#7797B7"/>
+    <rect x="570" y="243" width="115" height="72" rx="8" fill="#142940" stroke="#7797B7"/>
+  </g>
+  <g fill="#D5AF55" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" letter-spacing="1">
+    <text x="172" y="177">DDR4 BANK 0</text><text x="172" y="284">DDR4 BANK 1</text>
+    <text x="627" y="177">DDR4 BANK 2</text><text x="627" y="284">DDR4 BANK 3</text>
+  </g>
+  <g stroke="#67B8DE" stroke-width="2">
+    <path d="M230 156h35l27 29h48m-110-16h29l30 32h51m-110 20h35l27 28h48"/>
+    <path d="M570 156h-35l-27 29h-32m94-13h-29l-30 32h-55m114 20h-35l-27 28h-32"/>
+  </g>
+  <g stroke="#D5AF55" stroke-opacity=".72">
+    <path d="M230 175h34l29 29h46m-109 38h34l29-29h46"/>
+    <path d="M570 175h-34l-29 29h-31m94 38h-34l-29-29h-31"/>
+  </g>
+  <text x="400" y="391" text-anchor="middle" fill="#B8C7DA" font-family="Arial, sans-serif" font-size="16" letter-spacing="3">ASIC IP  /  DDR4 DATA PATH</text>
 </svg>

@@ -1,7 +1,7 @@
 "use client";
 
-import { useState, type FormEvent } from "react";
-import { Send, CheckCircle } from "lucide-react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
+import { Send, CheckCircle, Paperclip } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -12,23 +12,22 @@ export function ContactForm() {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [message, setMessage] = useState("");
+  const [attachmentName, setAttachmentName] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    const form = e.currentTarget;
     setLoading(true);
     setError(null);
 
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify({ name, email, phone, message }),
+        headers: { Accept: "application/json" },
+        body: new FormData(form),
       });
 
       if (!response.ok) {
@@ -51,11 +50,17 @@ export function ContactForm() {
       setEmail("");
       setPhone("");
       setMessage("");
+      setAttachmentName("");
+      form.reset();
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
     } finally {
       setLoading(false);
     }
+  };
+
+  const handleAttachmentChange = (event: ChangeEvent<HTMLInputElement>) => {
+    setAttachmentName(event.target.files?.[0]?.name ?? "");
   };
 
   if (submitted) {
@@ -145,6 +150,24 @@ export function ContactForm() {
           aria-required="true"
           rows={5}
         />
+      </div>
+
+      <div className="space-y-2">
+        <Label htmlFor="attachment">Resume or Document (Optional)</Label>
+        <Input
+          id="attachment"
+          name="attachment"
+          type="file"
+          accept=".pdf,.doc,.docx,.txt,.rtf,.odt"
+          aria-describedby="attachment-help"
+          onChange={handleAttachmentChange}
+          className="file:mr-4 file:rounded-md file:border-0 file:bg-gold/10 file:px-3 file:py-1 file:text-sm file:font-medium file:text-gold"
+        />
+        <p id="attachment-help" className="text-xs text-muted">
+          <Paperclip className="mr-1 inline h-3 w-3" aria-hidden="true" />
+          PDF, Word, OpenDocument, or text documents up to 10 MB.
+          {attachmentName ? ` Selected: ${attachmentName}` : ""}
+        </p>
       </div>
 
       {error ? <p className="text-sm text-red-400">{error}</p> : null}

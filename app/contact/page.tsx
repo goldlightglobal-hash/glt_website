@@ -8,7 +8,7 @@ import { companyInfo } from "@/lib/data";
 
 export const metadata: Metadata = createPageMetadata(
   "Contact",
-  "Contact GoldLighT Technologies for AI, FPGA, ASIC, embedded systems, and training inquiries. Bangalore, India.",
+  "Contact GoldLighT Technologies for AI, FPGA, ASIC, embedded systems, and training inquiries. Offices in Kerala and Bangalore, India.",
   "/contact/"
 );
 
@@ -85,7 +85,23 @@ export default function ContactPage() {
                       <MapPin className="h-5 w-5" aria-hidden="true" />
                     </div>
                     <div>
-                      <h3 className="font-medium mb-1">Address</h3>
+                      <h3 className="font-medium mb-1">Registered Office</h3>
+                      <a
+                        href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(companyInfo.registeredOffice)}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm text-muted hover:text-gold transition-colors"
+                      >
+                        {companyInfo.registeredOffice}
+                      </a>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-gold/10 text-gold">
+                      <MapPin className="h-5 w-5" aria-hidden="true" />
+                    </div>
+                    <div>
+                      <h3 className="font-medium mb-1">Bangalore Office</h3>
                       <a
                         href="https://maps.app.goo.gl/c6xcm1UhHLdCwzHm9"
                         target="_blank"
@@ -112,7 +128,7 @@ export default function ContactPage() {
                 <div className="rounded-xl border border-border bg-secondary overflow-hidden">
                   <div className="relative aspect-video bg-secondary/80">
                     <iframe
-                      title="GoldLighT Technologies location map"
+                      title="GoldLighT Technologies Bangalore office location map"
                       src="https://www.google.com/maps?q=JC+Industrial+Estate%2C+Yelachenahalli%2C+Bengaluru%2C+Karnataka+560062&z=17&output=embed"
                       className="absolute inset-0 h-full w-full border-0"
                       allowFullScreen

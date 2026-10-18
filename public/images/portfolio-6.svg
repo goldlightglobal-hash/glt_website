@@ -1,11 +1,44 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
-  <rect width="800" height="450" fill="#0B1120"/>
-  <rect x="280" y="130" width="240" height="180" rx="4" fill="#1a2332" stroke="#D4AF37" stroke-width="1"/>
-  <line x1="300" y1="150" x2="500" y2="150" stroke="#2563EB" stroke-width="0.5" opacity="0.4"/>
-  <line x1="300" y1="170" x2="500" y2="170" stroke="#2563EB" stroke-width="0.5" opacity="0.4"/>
-  <line x1="300" y1="190" x2="500" y2="190" stroke="#2563EB" stroke-width="0.5" opacity="0.4"/>
-  <circle cx="350" cy="250" r="8" fill="#D4AF37"/>
-  <circle cx="400" cy="250" r="8" fill="#2563EB"/>
-  <circle cx="450" cy="250" r="8" fill="#D4AF37"/>
-  <text x="400" y="400" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="16">Multi-layer RF PCB</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#091324"/>
+      <stop offset="1" stop-color="#18243A"/>
+    </linearGradient>
+    <linearGradient id="board" x1="232" y1="107" x2="603" y2="327" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#21785D"/>
+      <stop offset="1" stop-color="#12483F"/>
+    </linearGradient>
+    <linearGradient id="copper" x1="246" y1="129" x2="574" y2="322" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#E4B65C"/>
+      <stop offset="1" stop-color="#C58B38"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <path d="m196 142 349-73 116 67-350 76-115-70Z" fill="#D5AF55" fill-opacity=".25"/>
+  <path d="m196 160 349-73 116 67-350 76-115-70Z" fill="#B0C5D4"/>
+  <path d="m196 178 349-73 116 67-350 76-115-70Z" fill="#9C6338"/>
+  <path d="m196 196 349-73 116 67-350 76-115-70Z" fill="#D7DCE0"/>
+  <path d="m196 214 349-73 116 67-350 76-115-70Z" fill="#274C42"/>
+  <path d="m196 232 349-73 116 67-350 76-115-70Z" fill="#B0C5D4"/>
+  <path d="m196 250 349-73 116 67-350 76-115-70Z" fill="#9C6338"/>
+  <path d="m196 268 349-73 116 67-350 76-115-70Z" fill="url(#board)" stroke="#79C29C" stroke-width="2"/>
+  <path d="m220 269 328-68 89 52-328 69-89-53Z" stroke="url(#copper)" stroke-width="3"/>
+  <path d="m250 269 116-24 35 20 85-18m-175-20 79-16 19 11 82-17m-154 85 95-20 25 15 88-18m-25-95-14 32 23 13-8 36" stroke="#E6B95C" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#E8C778" stroke="#F6D990">
+    <circle cx="250" cy="269" r="5"/><circle cx="366" cy="245" r="5"/><circle cx="436" cy="229" r="5"/>
+    <circle cx="348" cy="307" r="5"/><circle cx="444" cy="287" r="5"/><circle cx="540" cy="267" r="5"/>
+  </g>
+  <rect x="395" y="184" width="73" height="42" rx="5" transform="rotate(-12 395 184)" fill="#111D29" stroke="#D5AF55" stroke-width="2"/>
+  <path d="m409 193 47-10m-45 17 37-8m-33 15 20-4" stroke="#83B8A4" stroke-width="2"/>
+  <g stroke="#73D1D1" stroke-width="2">
+    <path d="M246 132c-42-37 11-72 50-48s-4 57 28 61"/>
+    <path d="M279 127c-25-22 7-43 30-29s-3 34 19 37" opacity=".7"/>
+  </g>
+  <path d="M252 130c-11-6-18-17-17-29m39 28c-5-12-1-22 8-29" stroke="#D5AF55" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="254" cy="132" r="5" fill="#D5AF55"/>
+  <g fill="#D5AF55">
+    <circle cx="235" cy="186" r="3"/><circle cx="252" cy="196" r="3"/><circle cx="270" cy="206" r="3"/>
+    <circle cx="558" cy="192" r="3"/><circle cx="576" cy="182" r="3"/><circle cx="594" cy="172" r="3"/>
+  </g>
+  <text x="400" y="398" text-anchor="middle" fill="#B8C7DA" font-family="Arial, sans-serif" font-size="16" letter-spacing="3">8-LAYER RF PCB  /  5G SIGNAL INTEGRITY</text>
 </svg>

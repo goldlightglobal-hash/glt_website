@@ -64,12 +64,12 @@ export default function AboutPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <div className="relative aspect-square max-w-md mx-auto rounded-2xl overflow-hidden border border-border bg-secondary">
+              <div className="relative aspect-square max-w-md mx-auto rounded-full overflow-hidden border-4 border-gold">
                 <Image
-                  src="/images/about-hero.svg"
-                  alt="GoldLighT Technologies engineering team"
+                  src="/logo.png"
+                  alt="GoldLighT Technologies company logo"
                   fill
-                  className="object-cover"
+                  className="object-contain"
                   priority
                 />
               </div>

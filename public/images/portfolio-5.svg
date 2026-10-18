@@ -1,8 +1,45 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
-  <rect width="800" height="450" fill="#0B1120"/>
-  <circle cx="400" cy="200" r="60" fill="#111827" stroke="#2563EB" stroke-width="2"/>
-  <circle cx="400" cy="200" r="30" fill="#2563EB" opacity="0.3"/>
-  <line x1="400" y1="260" x2="400" y2="320" stroke="#D4AF37" stroke-width="2"/>
-  <line x1="360" y1="320" x2="440" y2="320" stroke="#D4AF37" stroke-width="2"/>
-  <text x="400" y="400" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="16">TinyML Sensor Hub</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#091323"/>
+      <stop offset="1" stop-color="#15253A"/>
+    </linearGradient>
+    <linearGradient id="mcu" x1="332" y1="119" x2="468" y2="298" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#274B63"/>
+      <stop offset="1" stop-color="#13263B"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <path d="M400 205 180 111m220 94 0-103m0 103 218-94M400 205 178 304m222-99v116m0-116 222 99" stroke="#68B9CA" stroke-opacity=".38" stroke-width="2"/>
+  <g fill="#13273B" stroke="#659AB4" stroke-width="2">
+    <circle cx="180" cy="107" r="33"/><circle cx="400" cy="99" r="33"/><circle cx="620" cy="107" r="33"/>
+    <circle cx="178" cy="308" r="33"/><circle cx="400" cy="324" r="33"/><circle cx="622" cy="308" r="33"/>
+  </g>
+  <g stroke="#6DD1D0" stroke-width="2" stroke-linecap="round">
+    <path d="M166 109c9-18 19 18 28 0s19 18 28 0"/>
+    <path d="M388 99h8m4-10v20m8-15v10m8-5h-8"/>
+    <path d="M608 109c9-18 19 18 28 0s19 18 28 0"/>
+    <path d="M165 310h26m-13-13v26m432-13h24m-12-12v24"/>
+    <path d="M383 324c8-16 16-16 24 0s16 16 24 0"/>
+  </g>
+  <g fill="#D5AF55">
+    <circle cx="180" cy="65" r="4"/><circle cx="400" cy="56" r="4"/><circle cx="620" cy="65" r="4"/>
+    <circle cx="178" cy="350" r="4"/><circle cx="400" cy="366" r="4"/><circle cx="622" cy="350" r="4"/>
+  </g>
+  <rect x="321" y="117" width="158" height="178" rx="16" fill="#07111D" stroke="#D5AF55" stroke-width="2"/>
+  <rect x="336" y="132" width="128" height="148" rx="10" fill="url(#mcu)" stroke="#75AFC0" stroke-opacity=".8"/>
+  <g stroke="#A4C7D6" stroke-width="3" stroke-opacity=".65">
+    <path d="M350 107v25m18-25v25m18-25v25m18-25v25m18-25v25m18-25v25m18-25v25"/>
+    <path d="M350 280v25m18-25v25m18-25v25m18-25v25m18-25v25m18-25v25m18-25v25"/>
+    <path d="M296 145h40m-40 23h40m-40 23h40m-40 23h40m-40 23h40m-40 23h40"/>
+    <path d="M464 145h40m-40 23h40m-40 23h40m-40 23h40m-40 23h40m-40 23h40"/>
+  </g>
+  <text x="400" y="172" text-anchor="middle" fill="#C4D6E4" font-family="Arial, sans-serif" font-size="11" letter-spacing="2">CORTEX-M</text>
+  <path d="M365 204h8l8-15 12 30 10-21 10 11 10-19 9 14h9" stroke="#82E0D3" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="400" y="256" text-anchor="middle" fill="#D5AF55" font-family="Arial, sans-serif" font-size="10" letter-spacing="2">TINYML CORE</text>
+  <rect x="544" y="173" width="156" height="72" rx="9" fill="#0A1522" stroke="#3D5C77"/>
+  <path d="M559 225h22l10-10 11 5 12-27 13 32 10-11h18" stroke="#5ED6BC" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <text x="622" y="193" text-anchor="middle" fill="#A8BDD0" font-family="Arial, sans-serif" font-size="10" letter-spacing="1">ON-DEVICE ANOMALY</text>
+  <path d="M479 207h65" stroke="#D5AF55" stroke-width="2" stroke-dasharray="5 5"/>
+  <text x="400" y="410" text-anchor="middle" fill="#B8C7DA" font-family="Arial, sans-serif" font-size="16" letter-spacing="3">SENSOR FUSION  /  LOW-POWER ML</text>
 </svg>

@@ -1,9 +1,25 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
-  <rect width="800" height="450" fill="#0B1120"/>
-  <circle cx="300" cy="200" r="40" fill="#2563EB" opacity="0.3"/>
-  <circle cx="400" cy="180" r="50" fill="#2563EB" opacity="0.4"/>
-  <circle cx="500" cy="200" r="40" fill="#2563EB" opacity="0.3"/>
-  <line x1="340" y1="200" x2="360" y2="180" stroke="#D4AF37" stroke-width="2"/>
-  <line x1="450" y1="180" x2="460" y2="200" stroke="#D4AF37" stroke-width="2"/>
-  <text x="400" y="350" text-anchor="middle" fill="#D4AF37" font-family="sans-serif" font-size="20" font-weight="bold">Artificial Intelligence</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#091324"/><stop offset="1" stop-color="#14243A"/></linearGradient>
+    <radialGradient id="glow"><stop stop-color="#4387D6" stop-opacity=".24"/><stop offset="1" stop-color="#4387D6" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <circle cx="405" cy="216" r="190" fill="url(#glow)"/>
+  <g stroke="#5589C4" stroke-opacity=".48" stroke-width="2">
+    <path d="m203 119 107 47m-117 31 108-10m-86 97 93-47m82-124-80 42m172-38-87 38m174-6-101 33m85 81-112-41m87 111-103-56m-129 43 66-76"/>
+    <path d="m310 166 93 50m-102-29 102 29m-95 70 95-70m80-50-80 50m164-17-164 17m111 66-111-66m9 120-9-120"/>
+  </g>
+  <g fill="#D4AE55" stroke="#F1CF7C" stroke-width="2">
+    <circle cx="203" cy="119" r="7"/><circle cx="193" cy="197" r="7"/><circle cx="215" cy="284" r="7"/>
+    <circle cx="310" cy="166" r="8"/><circle cx="303" cy="263" r="7"/>
+    <circle cx="405" cy="216" r="12"/><circle cx="403" cy="91" r="7"/><circle cx="483" cy="132" r="7"/>
+    <circle cx="565" cy="126" r="7"/><circle cx="647" cy="159" r="7"/><circle cx="647" cy="240" r="7"/>
+    <circle cx="568" cy="306" r="7"/><circle cx="550" cy="366" r="7"/><circle cx="396" cy="336" r="7"/>
+  </g>
+  <rect x="342" y="162" width="126" height="108" rx="15" fill="#0B1728" stroke="#D4AE55" stroke-width="2"/>
+  <path d="M365 227v-24l18-15 17 11 20-27 23 16" stroke="#83D7D0" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="365" cy="227" r="4" fill="#83D7D0"/><circle cx="443" cy="188" r="4" fill="#83D7D0"/>
+  <text x="405" y="250" text-anchor="middle" fill="#B8CBE0" font-family="Arial, sans-serif" font-size="11" letter-spacing="2">MODEL INFERENCE</text>
+  <rect x="99" y="344" width="602" height="46" rx="10" fill="#0A1523" stroke="#304863"/>
+  <text x="400" y="373" text-anchor="middle" fill="#B8CBE0" font-family="Arial, sans-serif" font-size="15" letter-spacing="3">TRAIN  →  OPTIMIZE  →  DEPLOY</text>
 </svg>

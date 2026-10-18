@@ -645,6 +645,8 @@ export const companyInfo = {
   phone: "+91 74060 58163",
   whatsapp: "+91 74060 58163",
   whatsappLink: "https://wa.me/917406058163",
+  registeredOffice:
+    "First Floor, Moriah Building, Dhanalakshmi Bank, NH Nagercoil TVM Road, Udiyankulangara, Thiruvananthapuram-695122, Kerala",
   address: "No 40/3, 1st Floor, JC Industrial Estate, Yelachenahalli, Bengaluru, Karnataka 560062",
   social: {
     linkedin: "https://in.linkedin.com/company/goldlight-technologies-pvt-ltd",

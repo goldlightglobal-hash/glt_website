@@ -1,14 +1,35 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" fill="none">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0B1120"/>
-      <stop offset="100%" style="stop-color:#111827"/>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0A1425"/>
+      <stop offset="1" stop-color="#17243A"/>
     </linearGradient>
+    <radialGradient id="bore" cx="0" cy="0" r="1" gradientTransform="matrix(0 146 -146 0 382 204)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#D7E9F7" stop-opacity=".14"/>
+      <stop offset=".55" stop-color="#74B9D5" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#0A1425" stop-opacity="0"/>
+    </radialGradient>
   </defs>
   <rect width="800" height="450" fill="url(#bg)"/>
-  <ellipse cx="400" cy="225" rx="120" ry="120" fill="none" stroke="#2563EB" stroke-width="2" opacity="0.6"/>
-  <ellipse cx="400" cy="225" rx="80" ry="80" fill="none" stroke="#D4AF37" stroke-width="1.5" opacity="0.5"/>
-  <path d="M280 225 Q400 100 520 225 Q400 350 280 225" fill="none" stroke="#2563EB" stroke-width="1" opacity="0.3"/>
-  <circle cx="400" cy="225" r="20" fill="#D4AF37" opacity="0.6"/>
-  <text x="400" y="400" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="16">Medical CT Reconstruction</text>
+  <g opacity=".25" stroke="#6CA3C5">
+    <path d="M72 91h210M72 111h145M572 91h156M630 111h98"/>
+    <path d="M72 338h180M594 338h134"/>
+  </g>
+  <path d="M189 317c0-13 11-24 24-24h298c13 0 24 11 24 24v15H189v-15Z" fill="#1C3047" stroke="#6885A4"/>
+  <path d="M205 332h322v9H205z" fill="#536B83"/>
+  <rect x="263" y="306" width="172" height="17" rx="8.5" fill="#A8BED1"/>
+  <path d="M421 299c23-15 47-17 70-8l36 16v17H421v-25Z" fill="#CDDCE8" fill-opacity=".9"/>
+  <path d="M463 296c13-25 21-49 20-75" stroke="#CDDCE8" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="383" cy="199" r="146" fill="url(#bore)"/>
+  <circle cx="383" cy="199" r="134" stroke="#9AB9D2" stroke-opacity=".34" stroke-width="24"/>
+  <circle cx="383" cy="199" r="103" stroke="#5E91B8" stroke-opacity=".7" stroke-width="7"/>
+  <circle cx="383" cy="199" r="86" stroke="#D5AF55" stroke-opacity=".7" stroke-width="2" stroke-dasharray="5 10"/>
+  <circle cx="383" cy="199" r="68" stroke="#8CD0E2" stroke-opacity=".5" stroke-width="2"/>
+  <path d="M383 112v22m0 130v22m-87-87h22m130 0h22m-148-61 16 16m91 91 16 16m0-123-16 16m-91 91-16 16" stroke="#E4BB5E" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="383" cy="199" r="38" fill="#54A7C6" fill-opacity=".16" stroke="#82C9DD" stroke-opacity=".8" stroke-width="2"/>
+  <path d="M364 201c10-22 27-22 38 0-11 22-28 22-38 0Z" fill="#E9B861" fill-opacity=".8"/>
+  <path d="M380 181c4 10 5 26 2 38m-15-19h31" stroke="#FFF0C5" stroke-opacity=".8" stroke-width="2"/>
+  <path d="M562 169h96m-96 18h67m-67 18h85" stroke="#78A1C2" stroke-opacity=".7" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="675" cy="169" r="4" fill="#E5BC66"/><circle cx="644" cy="187" r="4" fill="#73C6D6"/><circle cx="662" cy="205" r="4" fill="#E5BC66"/>
+  <text x="400" y="394" text-anchor="middle" fill="#C2D0DE" font-family="Arial, sans-serif" font-size="16" letter-spacing="3">CT SCANNER  /  RECONSTRUCTION</text>
 </svg>

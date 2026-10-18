@@ -1,9 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
-  <rect width="800" height="450" fill="#0B1120"/>
-  <rect x="290" y="140" width="220" height="160" rx="4" fill="#1a2332" stroke="#D4AF37" stroke-width="1"/>
-  <line x1="310" y1="160" x2="490" y2="160" stroke="#2563EB" stroke-width="0.5" opacity="0.3"/>
-  <line x1="310" y1="180" x2="490" y2="180" stroke="#2563EB" stroke-width="0.5" opacity="0.3"/>
-  <circle cx="350" cy="240" r="6" fill="#D4AF37"/>
-  <circle cx="400" cy="240" r="6" fill="#2563EB"/>
-  <text x="400" y="350" text-anchor="middle" fill="#D4AF37" font-family="sans-serif" font-size="20" font-weight="bold">PCB Design</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse"><stop stop-color="#091425"/><stop offset="1" stop-color="#16263A"/></linearGradient>
+    <linearGradient id="board" x1="188" y1="112" x2="622" y2="344" gradientUnits="userSpaceOnUse"><stop stop-color="#237555"/><stop offset="1" stop-color="#10483B"/></linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <path d="m169 139 382-76 112 66-382 78-112-68Z" fill="#B0BEC8"/>
+  <path d="m169 160 382-76 112 66-382 78-112-68Z" fill="#985E39"/>
+  <path d="m169 181 382-76 112 66-382 78-112-68Z" fill="#D8DEE3"/>
+  <path d="m169 202 382-76 112 66-382 78-112-68Z" fill="#985E39"/>
+  <path d="m169 223 382-76 112 66-382 78-112-68Z" fill="#B0BEC8"/>
+  <path d="m169 244 382-76 112 66-382 78-112-68Z" fill="url(#board)" stroke="#74C29A" stroke-width="2"/>
+  <path d="m192 244 112-22 30 18 56-12 23 13 99-20m-284-19 64-13 23 14 82-17m-90 92 86-18 30 18 79-16m-36-72-14 32 21 13-9 37" stroke="#E3BB69" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <g fill="#E5C476" stroke="#FFF0BF"><circle cx="192" cy="244" r="5"/><circle cx="304" cy="222" r="5"/><circle cx="392" cy="228" r="5"/><circle cx="330" cy="302" r="5"/><circle cx="416" cy="284" r="5"/><circle cx="535" cy="261" r="5"/></g>
+  <rect x="387" y="176" width="83" height="47" rx="5" transform="rotate(-12 387 176)" fill="#111C28" stroke="#D4AE55" stroke-width="2"/>
+  <path d="m401 188 53-11m-49 19 45-9m-40 17 28-6" stroke="#72B99B" stroke-width="2"/>
+  <circle cx="600" cy="300" r="21" stroke="#89D6DD" stroke-width="3"/><circle cx="600" cy="300" r="10" stroke="#89D6DD" stroke-width="2"/>
+  <path d="M600 279v-21h-36l-22-20m58 83v27h-52l-25-18" stroke="#78CCCA" stroke-width="3"/>
+  <g fill="#D4AE55"><circle cx="564" cy="258" r="4"/><circle cx="525" cy="327" r="4"/><circle cx="648" cy="300" r="4"/></g>
+  <rect x="48" y="99" width="119" height="69" rx="8" fill="#0B1724" stroke="#425E77"/>
+  <text x="107" y="123" text-anchor="middle" fill="#D4AE55" font-family="Arial, sans-serif" font-size="11" letter-spacing="2">LAYER STACK</text>
+  <g><rect x="67" y="136" width="78" height="5" rx="2" fill="#4CA987"/><rect x="67" y="144" width="78" height="4" rx="2" fill="#BD8050"/><rect x="67" y="151" width="78" height="4" rx="2" fill="#A8BBC8"/></g>
+  <text x="400" y="410" text-anchor="middle" fill="#B8C7DA" font-family="Arial, sans-serif" font-size="15" letter-spacing="3">MULTI-LAYER  /  HIGH-SPEED  /  RF</text>
 </svg>

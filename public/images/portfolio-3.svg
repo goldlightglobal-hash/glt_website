@@ -1,9 +1,40 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450">
-  <rect width="800" height="450" fill="#0B1120"/>
-  <rect x="200" y="100" width="400" height="250" rx="4" fill="#111827" stroke="#2563EB" stroke-width="1"/>
-  <rect x="250" y="140" width="60" height="40" rx="2" fill="#2563EB" opacity="0.5"/>
-  <rect x="330" y="160" width="80" height="50" rx="2" fill="#D4AF37" opacity="0.4"/>
-  <rect x="430" y="130" width="50" height="60" rx="2" fill="#2563EB" opacity="0.3"/>
-  <circle cx="280" cy="280" r="15" fill="#D4AF37" opacity="0.6"/>
-  <text x="400" y="400" text-anchor="middle" fill="#9CA3AF" font-family="sans-serif" font-size="16">Industrial Vision System</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 800 450" fill="none">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="800" y2="450" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#091323"/>
+      <stop offset="1" stop-color="#172133"/>
+    </linearGradient>
+    <linearGradient id="belt" x1="95" y1="310" x2="700" y2="369" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#27394D"/>
+      <stop offset="1" stop-color="#111B29"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <path d="M0 83h800M0 91h800" stroke="#3E5A78" stroke-opacity=".2"/>
+  <path d="M117 300h565l76 49H193l-76-49Z" fill="url(#belt)" stroke="#50677E"/>
+  <path d="M193 349v37m489-37v37" stroke="#6D8297" stroke-width="7"/>
+  <path d="M123 311h555" stroke="#83A4C1" stroke-opacity=".5" stroke-width="2" stroke-dasharray="14 12"/>
+  <g transform="translate(253 220)">
+    <path d="M0 50h80l30 30H31L0 50Z" fill="#D09B43"/>
+    <path d="M0 50V14l30-20 50 24v32l-30 18L0 50Z" fill="#A96F2C" stroke="#F0C56C" stroke-width="2"/>
+    <path d="M30-6v36l50 20V18L30-6Z" fill="#E1AF58"/>
+    <path d="m8 21 18-12m-18 23 18-12" stroke="#FFE3A3" stroke-width="2"/>
+  </g>
+  <g transform="translate(474 216)">
+    <path d="M0 54h79l30 30H31L0 54Z" fill="#516D80"/>
+    <path d="M0 54V18L30-2l49 23v33L49 72 0 54Z" fill="#24415A" stroke="#71A9C8" stroke-width="2"/>
+    <path d="M30-2v37l49 19V21L30-2Z" fill="#396B8B"/>
+    <path d="M8 26h15m-15 9h15m11-34v18m9-14v18" stroke="#B9E7EC" stroke-width="2"/>
+  </g>
+  <path d="M365 110h70v34l-10 10v31h-50v-31l-10-10v-34Z" fill="#1B2D40" stroke="#91A9BE" stroke-width="2"/>
+  <path d="M385 185v38m30-38v38" stroke="#7BC7E5" stroke-opacity=".65" stroke-width="3"/>
+  <circle cx="400" cy="236" r="23" fill="#56B8DD" fill-opacity=".1" stroke="#6AD4F2" stroke-opacity=".7"/>
+  <path d="M384 236h32m-16-16v32" stroke="#7ADCF5" stroke-opacity=".85" stroke-width="2"/>
+  <path d="M397 195 326 228m77-33 98 32" stroke="#66CCEF" stroke-opacity=".65" stroke-width="2" stroke-dasharray="5 6"/>
+  <rect x="574" y="105" width="142" height="94" rx="10" fill="#0B1523" stroke="#50657C"/>
+  <path d="M591 177v-19l17-13 15 8 20-26 16 16 18-11 19 6" stroke="#D5AF55" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="591" y="118" width="7" height="7" rx="2" fill="#49D4C0"/><text x="608" y="130" fill="#B9C9D8" font-family="Arial, sans-serif" font-size="10">DEFECT DETECTED</text>
+  <rect x="468" y="210" width="95" height="105" rx="5" stroke="#54D5BE" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="515" y="204" text-anchor="middle" fill="#80E6D1" font-family="Arial, sans-serif" font-size="11" letter-spacing="1">CLASS: PART</text>
+  <text x="400" y="410" text-anchor="middle" fill="#B8C7DA" font-family="Arial, sans-serif" font-size="16" letter-spacing="3">MACHINE VISION  /  REAL-TIME QA</text>
 </svg>
