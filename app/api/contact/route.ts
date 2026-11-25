@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const EMAIL_TO = process.env.CONTACT_EMAIL || "info@goldlight.co.in";
+const MARKETING_EMAIL = process.env.MARKETING_EMAIL || "marketing@goldlight.co.in";
 const SMTP_HOST = process.env.SMTP_HOST;
 const SMTP_PORT = Number(process.env.SMTP_PORT || "587");
 const SMTP_USER = process.env.SMTP_USER;
@@ -57,6 +58,7 @@ export async function POST(request: NextRequest) {
     let email: unknown;
     let phone: unknown;
     let message: unknown;
+    let position: unknown = null;
     let attachmentValue: unknown = null;
 
     if (
@@ -77,6 +79,7 @@ export async function POST(request: NextRequest) {
       email = formData.get("email");
       phone = formData.get("phone");
       message = formData.get("message");
+      position = formData.get("position");
       attachmentValue = formData.get("attachment");
     } else {
       let body: unknown;
@@ -99,6 +102,7 @@ export async function POST(request: NextRequest) {
       email = payload.email;
       phone = payload.phone;
       message = payload.message;
+      position = payload.position;
     }
 
     if (
@@ -188,14 +192,26 @@ export async function POST(request: NextRequest) {
       const htmlEmail = escapeHtml(emailAddress);
       const htmlPhone = escapeHtml(emailPhone || "Not provided");
       const htmlMessage = escapeHtml(emailMessage).replace(/\n/g, "<br />");
+      const emailPosition =
+        typeof position === "string" && position.trim()
+          ? position.trim()
+          : "";
+      const recipient =
+        emailPosition.toLowerCase() === "marketing executive"
+          ? MARKETING_EMAIL
+          : EMAIL_TO;
+      const subject = emailPosition
+        ? `Application for ${emailPosition} - ${emailName}`
+        : "New website enquiry from GoldLighT Technologies";
+      const htmlPosition = escapeHtml(emailPosition);
 
       await transporter.sendMail({
         from: EMAIL_FROM,
         replyTo: `${emailName} <${emailAddress}>`,
-        to: EMAIL_TO,
-        subject: "New website enquiry from GoldLighT Technologies",
-        text: `Name: ${emailName}\nEmail: ${emailAddress}\nPhone: ${emailPhone || "Not provided"}\n\nMessage:\n${emailMessage}`,
-        html: `<p><strong>Name:</strong> ${htmlName}</p><p><strong>Email:</strong> ${htmlEmail}</p><p><strong>Phone:</strong> ${htmlPhone}</p><p><strong>Message:</strong></p><p>${htmlMessage}</p>`,
+        to: recipient,
+        subject,
+        text: `Name: ${emailName}\nEmail: ${emailAddress}\nPhone: ${emailPhone || "Not provided"}${emailPosition ? `\nPosition: ${emailPosition}` : ""}\n\nMessage:\n${emailMessage}`,
+        html: `<p><strong>Name:</strong> ${htmlName}</p><p><strong>Email:</strong> ${htmlEmail}</p><p><strong>Phone:</strong> ${htmlPhone}</p>${emailPosition ? `<p><strong>Position:</strong> ${htmlPosition}</p>` : ""}<p><strong>Message:</strong></p><p>${htmlMessage}</p>`,
         ...(attachment
           ? {
               attachments: [

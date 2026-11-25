@@ -444,34 +444,49 @@ export const trainingExtras: { title: string; description: string; icon: IconKey
 
 export const jobOpenings: JobOpening[] = [
   {
-    title: "Senior FPGA Design Engineer",
-    department: "Hardware Engineering",
-    location: "Bangalore, India",
+    title: "Marketing Executive",
+    department: "Marketing & Business Development",
+    location: "Bengaluru, Karnataka",
     type: "Full-time",
-  },
-  {
-    title: "AI/ML Engineer",
-    department: "Artificial Intelligence",
-    location: "Bangalore, India",
-    type: "Full-time",
-  },
-  {
-    title: "ASIC Verification Engineer",
-    department: "VLSI Design",
-    location: "Hyderabad, India",
-    type: "Full-time",
-  },
-  {
-    title: "Embedded Systems Engineer",
-    department: "Embedded Engineering",
-    location: "Bangalore, India",
-    type: "Full-time",
-  },
-  {
-    title: "FPGA Design Intern",
-    department: "Hardware Engineering",
-    location: "Bangalore, India",
-    type: "Internship",
+    description:
+      "GoldLighT Technologies Pvt. Ltd. is looking for a motivated and result-oriented Marketing Executive to support the company's marketing, business development, and client acquisition activities. The candidate will be responsible for promoting the company's services in AI/ML, FPGA, ASIC, Embedded Systems, technical training programmes, and R&D collaborations.",
+    responsibilities: [
+      "Identify and develop new business opportunities.",
+      "Contact engineering colleges, universities, industries, and potential clients.",
+      "Promote technical training programmes, workshops, internships, and FDPs.",
+      "Generate leads through telephone calls, emails, LinkedIn, and other platforms.",
+      "Coordinate with colleges and industries for training and R&D proposals.",
+      "Manage social media marketing and promotional activities.",
+      "Prepare marketing presentations, proposals, and promotional materials.",
+      "Follow up with prospective clients and maintain customer relationships.",
+      "Maintain lead databases and submit regular marketing reports.",
+      "Support the company's overall branding and business development activities.",
+    ],
+    qualifications: [
+      "Any Degree / BBA / MBA / B.Com / B.Tech or equivalent.",
+      "Good communication and interpersonal skills.",
+      "Basic knowledge of digital marketing and social media platforms.",
+      "Proficiency in MS Office, Google Sheets, and email communication.",
+      "Ability to communicate with colleges, industries, and corporate clients.",
+      "Good negotiation, presentation, and follow-up skills.",
+    ],
+    preferredSkills: [
+      "Experience in marketing, sales, or business development.",
+      "Knowledge of digital marketing, SEO, and social media management.",
+      "Experience in educational or technical service marketing.",
+      "Knowledge of AI, Machine Learning, Embedded Systems, FPGA, or ASIC is an added advantage.",
+    ],
+    candidateProfile: [
+      "Self-motivated and target-oriented.",
+      "Willingness to learn about emerging technologies.",
+      "Ability to work independently and as part of a team.",
+      "Professional attitude and willingness to travel for business meetings when required.",
+    ],
+    compensation: [
+      "Performance-based compensation linked to the business profit generated through marketing and business development activities.",
+      "Travel expenses will be reimbursed or a travel allowance will be provided whenever official travel is required for business meetings, client visits, or marketing activities.",
+      "Additional incentives may be considered based on business development performance.",
+    ],
   },
 ];
 

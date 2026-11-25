@@ -84,11 +84,49 @@ export default function CareersPage() {
                         {job.type}
                       </span>
                     </div>
+                    {job.description && (
+                      <p className="mt-4 max-w-3xl text-sm text-muted leading-relaxed">
+                        {job.description}
+                      </p>
+                    )}
                   </div>
                   <Button asChild variant="default" size="sm" className="shrink-0">
-                    <Link href="/contact/">Apply</Link>
+                    <Link href="/contact/?position=Marketing%20Executive">Apply</Link>
                   </Button>
                 </article>
+                {job.responsibilities && (
+                  <article className="rounded-xl border border-border bg-card p-6">
+                    <h4 className="font-heading text-lg font-semibold mb-4">Key Responsibilities</h4>
+                    <BulletList items={job.responsibilities} />
+                  </article>
+                )}
+                {job.qualifications && (
+                  <article className="rounded-xl border border-border bg-card p-6">
+                    <h4 className="font-heading text-lg font-semibold mb-4">Required Qualifications</h4>
+                    <BulletList items={job.qualifications} />
+                  </article>
+                )}
+                {job.preferredSkills && (
+                  <article className="rounded-xl border border-border bg-card p-6">
+                    <h4 className="font-heading text-lg font-semibold mb-4">Preferred Skills</h4>
+                    <BulletList items={job.preferredSkills} />
+                  </article>
+                )}
+                {job.candidateProfile && (
+                  <article className="rounded-xl border border-border bg-card p-6">
+                    <h4 className="font-heading text-lg font-semibold mb-4">Candidate Profile</h4>
+                    <BulletList items={job.candidateProfile} />
+                  </article>
+                )}
+                {job.compensation && (
+                  <article className="rounded-xl border border-gold/20 bg-gold/5 p-6">
+                    <h4 className="font-heading text-lg font-semibold mb-4">Compensation &amp; Benefits</h4>
+                    <BulletList items={job.compensation} />
+                    <p className="mt-4 text-sm text-muted leading-relaxed">
+                      Interested candidates can share their updated resumes with GoldLighT Technologies Pvt. Ltd.
+                    </p>
+                  </article>
+                )}
               </ScrollReveal>
             ))}
           </div>

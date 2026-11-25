@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, type ChangeEvent, type FormEvent } from "react";
+import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
 import { Send, CheckCircle, Paperclip } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -16,6 +16,15 @@ export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [position, setPosition] = useState("");
+
+  useEffect(() => {
+    const positionParam = new URLSearchParams(window.location.search).get("position");
+    if (positionParam) {
+      setPosition(positionParam);
+      setMessage(`I am interested in the ${positionParam} position.`);
+    }
+  }, []);
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -94,6 +103,7 @@ export function ContactForm() {
       aria-label="Contact form"
       noValidate
     >
+      {position ? <input type="hidden" name="position" value={position} /> : null}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div className="space-y-2">
           <Label htmlFor="name">Full Name *</Label>

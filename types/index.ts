@@ -52,6 +52,12 @@ export interface JobOpening {
   department: string;
   location: string;
   type: string;
+  description?: string;
+  responsibilities?: string[];
+  qualifications?: string[];
+  preferredSkills?: string[];
+  candidateProfile?: string[];
+  compensation?: string[];
 }
 
 export interface FeaturedInternshipProgram {
